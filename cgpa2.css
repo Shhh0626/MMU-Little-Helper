@@ -1,0 +1,62 @@
+.home-section-one {
+  padding: 100px 0px;
+  background-color: #f4f5ff;
+}
+
+.search {
+  width: 42vw;
+  font-size: 1.1rem;
+  padding: 10px 15px 10px 50px;
+  border-radius: 20px;
+  background-color: var(--secondary-color) !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: 15px center;
+}
+
+.list-group {
+  position: absolute;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 300px;
+  margin-left: 35px;
+}
+
+@media screen and (max-width: 992px) {
+  /* lg */
+  .search {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* sm */
+  .home-section-one {
+    padding: 55px 0px;
+  }
+
+  .search {
+    width: 90vw;
+  }
+  .list-group {
+    margin-left: 0px;
+  }
+}
+
+.list-group-item-action {
+  cursor: pointer;
+}
+
+[data-country] {
+  font-size: 0.8rem;
+}
+
+.home-heading {
+  padding: 25px;
+  color: var(--primary-color);
+}
+
+.home-section-two {
+  padding: 70px 0px;
+}

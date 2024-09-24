@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+
+    <link rel="stylesheet" href="camera.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"
+        integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+          <input type="checkbox" id="show-search">
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+          <div class="content">
+          <div class="logo"><a href="index.html">MMU Little Helper</a></div>
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="attendance.html">Attendance</a></li>
+              <li>
+                <a href="CPGA-calculator.html" class="desktop-link">CGPA/CPA</a>
+                <input type="checkbox" id="show-features">
+                <label for="show-features"><a href="CPGA-calculator.html">CGPA/CGPA</a></label>
+              </li>
+              <li>
+                <a href="faq.html" class="desktop-link">More</a>
+                <input type="checkbox" id="show-services">
+                <label for="show-services">More</label>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="schoolfees.html">School Fees</a></li>
+                  <li><a href="camera.html">QR-Scanner</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          </form>
+        </nav>
+      </div>
+    <h1>QR Code Scanner</h1> <!-- Move h1 to the top -->
+
+    <main>
+        <div id="reader"></div>
+        <div id="result"></div>
+    </main>
+
+    <script>
+        const scanner = new Html5QrcodeScanner('reader', {
+            qrbox: { width: 300, height: 300 }, // Adjust dimensions for better mobile usability
+            fps: 10, // Reduce frames per second for smoother performance on mobile
+        });
+
+        scanner.render(success, error);
+
+        // function success(result) {
+        //     document.getElementById('result').innerHTML = `
+        //         <h2>Success!</h2>
+        //         <p><a href="${result}" target="_blank">${result}</a></p>
+        //     `;
+        //     scanner.clear();
+        // }
+
+        
+        function success(result) {
+        window.location.href = result;
+        scanner.clear();
+        }
+
+
+        function error(err) {
+            console.error(err);
+        }
+    </script>
+
+<footer>
+    <p>Copyright © 2024 Mini It Project Group 3 All Rights Reserved. </p>
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MMU Little Helper</title>
+  <link rel="stylesheet" href="schoolfees.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo"><a href="index.html">MMU Little Helper</a></div>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="attendance.html">Attendance</a></li>
+          <li>
+            <a href="CPGA-calculator.html" class="desktop-link">CGPA/CPA</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features"><a href="CPGA-calculator.html">CGPA/CGPA</a></label>
+          </li>
+          <li>
+            <a href="#" class="desktop-link">More</a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">More</label>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="schoolfees.html">School Fees</a></li>
+              <li><a href="camera.html">QR-Scanner</a></li>
+            </ul>
+          </li>
+         
+        </ul>
+      </div>
+      </form>
+    </nav>
+  </div>
+<main>
+    <h1>Welcome to mmu</h1>
+    <h2>lol</h2>
+    <h3>Blank space</h3>
+    <iframe src="https://app.calconic.com/api/embed/calculator/66e8aaf26b0d2b002a9ebcd5" sandbox="allow-same-origin allow-forms allow-scripts allow-top-navigation allow-popups-to-escape-sandbox allow-popups" title="Calconic_ Calculator" name="Calconic_ Calculator" height="1438px" scrolling="no" style="width: 100%; border: 0; outline: none;"></iframe>
+<script>
+  (function() {
+    function inViewport(element) {
+        var m = 100;
+        var w = window;
+        var r = element.getBoundingClientRect();
+        var wB = w.innerHeight;
+        var wR = w.innerWidth;
+        return ( (0 <= r.top && wB -m >= r.top) || (0 >= r.top && wB <= r.bottom) || (m <= r.bottom && wB >= r.bottom) )
+          && ( (0 <= r.left && wR -m >= r.left) || (0 >= r.left && wR <= r.right) || (m <= r.right && wR >= r.right) );
+    }
+    
+    var iframes = [];
+    window.addEventListener("message",function(t){
+      var e="https://www.paypalobjects.com/api/checkout.4.0.141.js";
+      if(!document.querySelector('script[src="'+e+'"]')&&t.data&&"LOAD_PAYPAL"===t.data.action){
+      var a=document.createElement("script");a.src=e,a.async=!0,a.dataset={paypalCheckout:!0,noBridge:!0,state:"ppxo_meta",env:"production"},document.body.append(a)
+      }if(t.data&&"CALCONIC_UPDATE_HEIGHT"===t.data.action){
+      var l=document.querySelectorAll('iframe[src="https://app.calconic.com/api/embed/calculator/'+t.data.payload.id+'"]');
+      for (let i in [...l]) {
+        l[i].height=t.data.payload.height;
+        if (!iframes.includes(l[i])) {
+          iframes.push(l[i]);
+          let intervalId = setInterval(function() {
+            if (inViewport(l[i])) {
+              clearInterval(intervalId);
+              l[i].contentWindow.postMessage({ action: 'IN_VIEWPORT' }, '*');
+            }
+          }, 200);
+        }
+      };}
+    });
+  })();
+</script>
+</main>
+    <footer>
+        <p>Copyright © 2024 Mini It Project Group 3 All Rights Reserved. </p>
+    </footer>
+
+</body>
+</html>

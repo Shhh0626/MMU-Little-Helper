@@ -1,0 +1,96 @@
+/* -----------------CALCULATOR------------------ */
+.current-cgpa {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  /* sm */
+  .current-cgpa {
+    display: block;
+  }
+}
+
+.current-cgpa-child {
+  flex-basis: 50%;
+  padding-right: 20px;
+}
+
+th,
+.form-label {
+  color: var(--text-color) !important;
+}
+
+.calculator-table {
+  width: 100%;
+}
+
+.course-col {
+  width: 45%;
+}
+
+.credit-col {
+  width: 25%;
+}
+
+.grade-col {
+  width: 25%;
+}
+
+.remove-col {
+  width: 5%;
+}
+
+.grade {
+  color: rgb(100, 100, 100);
+}
+
+.course,
+.credit,
+.grade-selected {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.course::placeholder,
+.credit::placeholder {
+  font-weight: normal;
+}
+
+.remove-subject-button {
+  color: darkblue;
+  font-size: 1.2rem;
+}
+
+.remove-subject-button:hover {
+  color: #d32626;
+}
+
+.addSubject-btn {
+  width: 100%;
+  padding: 2px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 2px dashed var(--primary-color);
+  outline: none;
+  border-radius: 5px;
+}
+
+.addSubject-btn:hover {
+  color: var(--green);
+  border: 2px dashed var(--green);
+}
+
+.result {
+  color: var(--primary-color);
+}
+
+.display-value {
+  font-weight: 400;
+}
+
+body{
+  background-color: #fea49f;
+  
+}
+

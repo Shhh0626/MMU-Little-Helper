@@ -1,0 +1,33 @@
+:root {
+  --primary-color: navy;
+  --secondary-color: #ebe4ff;
+  --tertiary-color: #bfcbce;
+  --text-color: #202452;
+  --dark-purple: #1b083d;
+  --green: #00cc66;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  color: var(--text-color);
+}
+
+.hide {
+  display: none;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.page-title {
+  color: var(--primary-color);
+}
+
+
+
+
+
